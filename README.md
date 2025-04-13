@@ -23,3 +23,72 @@ spring.datasource.password=<your-password>
 ```
 
 ---
+
+## 📬 Postman API Examples
+
+Here are example JSON bodies you can use in Postman to test the API endpoints:
+
+### 1. **Create a Survey (POST `/api/surveys`)**
+```json
+{
+  "firstName": "John",
+  "lastName": "Doe",
+  "streetAddress": "123 Main St",
+  "city": "Fairfax",
+  "state": "VA",
+  "zip": "22030",
+  "telephone": "123-456-7890",
+  "email": "john.doe@example.com",
+  "dateOfSurvey": "2025-04-13",
+  "likedMost": "students",
+  "interestSource": "Internet",
+  "recommendLikelihood": "Very Likely",
+  "additionalComments": "Great experience!"
+}
+```
+
+---
+
+### 2. **Update a Survey (PUT `/api/surveys/{id}`)**
+Replace `{id}` with the ID of the survey you want to update. Example body:
+```json
+{
+  "firstName": "Jane",
+  "lastName": "Smith",
+  "streetAddress": "456 Elm St",
+  "city": "Arlington",
+  "state": "VA",
+  "zip": "22201",
+  "telephone": "987-654-3210",
+  "email": "jane.smith@example.com",
+  "dateOfSurvey": "2025-04-12",
+  "likedMost": "campus",
+  "interestSource": "friends",
+  "recommendLikelihood": "Likely",
+  "additionalComments": "Loved the campus atmosphere!"
+}
+```
+
+---
+
+### 3. **Delete a Survey (DELETE `/api/surveys/{id}`)**
+- No body is required for this request.
+- Replace `{id}` with the ID of the survey you want to delete.
+
+---
+
+### 4. **Get a Survey by ID (GET `/api/surveys/{id}`)**
+- No body is required for this request.
+- Replace `{id}` with the ID of the survey you want to retrieve.
+
+---
+
+### 5. **Get All Surveys (GET `/api/surveys`)**
+- No body is required for this request.
+
+---
+
+### Notes:
+- Ensure the `Content-Type` header in Postman is set to `application/json`.
+- Replace `{id}` in the URL with the actual survey ID you want to interact with.
+- The `dateOfSurvey` field should be in `YYYY-MM-DD` format.
