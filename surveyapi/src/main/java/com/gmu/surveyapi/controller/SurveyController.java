@@ -15,7 +15,6 @@ import org.springframework.http.*;
 import com.gmu.surveyapi.model.Survey;
 import com.gmu.surveyapi.service.SurveyService;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.server.ResponseStatusException;
 
 @RestController
 @RequestMapping("/api/surveys")
@@ -24,10 +23,6 @@ public class SurveyController {
 
   private final String version = "1.0.0.0"; // Change when you want to show that pipeline successfully rebuilds the application.
   private final SurveyService surveyService;
-  private static final List<String> VALID_LIKED_MOST = List.of("students", "location", "campus", "atmosphere", "dorm rooms", "sports");
-  private static final List<String> VALID_INTEREST_SOURCE = List.of("friends", "television", "Internet", "other");
-  private static final List<String> VALID_RECOMMEND_LIKELIHOOD = List.of("Very Likely", "Likely", "Unlikely");
-
 
   public SurveyController(SurveyService surveyService) {
     super();
@@ -36,7 +31,6 @@ public class SurveyController {
 
   @PostMapping
   public ResponseEntity<Survey> saveSurvey(@Valid @RequestBody Survey survey) {
-    validateSurveyInput(survey);
     return new ResponseEntity<>(surveyService.saveSurvey(survey), HttpStatus.CREATED);
   }
 
@@ -52,7 +46,6 @@ public class SurveyController {
 
   @PutMapping("{id}")
   public ResponseEntity<Survey> updateSurvey(@Valid @PathVariable("id") long id, @RequestBody Survey survey) throws Exception {
-    validateSurveyInput(survey);
     return new ResponseEntity<>(surveyService.updateSurvey(survey, id), HttpStatus.OK);
   }
 
@@ -75,19 +68,4 @@ public class SurveyController {
             "</html>";
     return new ResponseEntity<>(versionHtml, HttpStatus.OK);
   }
-
-  private void validateSurveyInput(Survey survey) {
-    if (survey.getLikedMost() != null && !VALID_LIKED_MOST.contains(survey.getLikedMost().toLowerCase())) {
-      throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid value for likedMost");
-    }
-
-    if (survey.getInterestSource() != null && !VALID_INTEREST_SOURCE.contains(survey.getInterestSource().toLowerCase())) {
-      throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid value for interestSource");
-    }
-
-    if (survey.getRecommendLikelihood() != null && !VALID_RECOMMEND_LIKELIHOOD.contains(survey.getRecommendLikelihood())) {
-      throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid value for recommendLikelihood");
-    }
-  }
-
 }
