@@ -49,6 +49,48 @@ Here are example JSON bodies you can use in Postman to test the API endpoints:
 
 ---
 
+#### Additional Examples:
+
+#### Example 1:
+```json
+{
+  "firstName": "Alice",
+  "lastName": "Johnson",
+  "streetAddress": "789 Pine St",
+  "city": "Reston",
+  "state": "VA",
+  "zip": "20190",
+  "telephone": "555-123-4567",
+  "email": "alice.johnson@example.com",
+  "dateOfSurvey": "2025-04-10",
+  "likedMost": "faculty",
+  "interestSource": "Television",
+  "recommendLikelihood": "Somewhat Likely",
+  "additionalComments": "The faculty was very helpful!"
+}
+```
+
+#### Example 2:
+```json
+{
+  "firstName": "Bob",
+  "lastName": "Brown",
+  "streetAddress": "321 Oak St",
+  "city": "Herndon",
+  "state": "VA",
+  "zip": "20170",
+  "telephone": "555-987-6543",
+  "email": "bob.brown@example.com",
+  "dateOfSurvey": "2025-04-11",
+  "likedMost": "location",
+  "interestSource": "Friends",
+  "recommendLikelihood": "Very Likely",
+  "additionalComments": ""
+}
+```
+
+---
+
 ### 2. **Update a Survey (PUT `/api/surveys/{id}`)**
 Replace `{id}` with the ID of the survey you want to update. Example body:
 ```json

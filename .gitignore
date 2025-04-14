@@ -32,3 +32,4 @@ replay_pid*
 /dataSources.local.xml
 /.idea
 surveyapi/src/main/resources/application-secret.properties
+/surveyapi/target
