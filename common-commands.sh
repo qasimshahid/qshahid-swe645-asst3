@@ -19,6 +19,7 @@ sudo docker run --privileged -d --restart=unless-stopped -p 80:80 -p 443:443 ran
 
 # For Jenkins, you will need Java
 sudo apt update
+sudo apt install maven # install maven for pipeline
 sudo apt install fontconfig openjdk-17-jre
 
 sudo wget -O /usr/share/keyrings/jenkins-keyring.asc \
