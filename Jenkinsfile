@@ -11,11 +11,21 @@ pipeline {
                 git branch: 'main', url: "${env.GIT_REPO_URL}"
             }
         }
+
+        stage('Inject Secret File') {
+            steps {
+                withCredentials([file(credentialsId: 'app_secret_file', variable: 'SECRET_FILE')]) {
+                    sh 'cp "$SECRET_FILE" surveyapi/src/main/resources/application-secret.properties'
+                }
+            }
+        }
+
         stage('Build Maven Project') {
             steps {
                 sh 'mvn clean package -DskipTests'
             }
         }
+
         stage('Build Docker Image') {
             steps {
                 script {
@@ -23,6 +33,7 @@ pipeline {
                 }
             }
         }
+
         stage('Push Docker Image') {
             steps {
                 script {
@@ -33,6 +44,7 @@ pipeline {
                 }
             }
         }
+
         stage('Deploy to Kubernetes') {
             steps {
                 script {
