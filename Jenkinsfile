@@ -20,6 +20,12 @@ pipeline {
             }
         }
 
+        stage('Ensure We Are Using Java 17') {
+            steps {
+                sh 'sudo update-java-alternatives --set /usr/lib/jvm/java-1.17.0-openjdk-amd64'
+            }
+        }
+
         stage('Build Maven Project') {
             steps {
                 dir('surveyapi') {
