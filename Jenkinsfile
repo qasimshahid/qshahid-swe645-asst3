@@ -23,7 +23,7 @@ pipeline {
         stage('Build Maven Project') {
             steps {
                 dir('surveyapi') {
-                    sh 'mvn clean package -DskipTests'
+                    sh 'mvn clean package spring-boot:repackage -DskipTests=true'
                 }       
             }
         }
