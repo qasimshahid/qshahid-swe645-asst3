@@ -21,6 +21,7 @@ sudo docker run --privileged -d --restart=unless-stopped -p 80:80 -p 443:443 ran
 sudo apt update
 sudo apt install maven # install maven for pipeline
 sudo apt install fontconfig openjdk-17-jre
+sudo apt install openjdk-17-jdk # needed
 
 sudo wget -O /usr/share/keyrings/jenkins-keyring.asc \
   https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
