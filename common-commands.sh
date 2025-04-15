@@ -47,4 +47,12 @@ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 sudo usermod -a -G docker jenkins
 sudo systemctl restart jenkins
 
+# IMPORTANT - MAKE SURE JENKINS INSTANCE HAS JAVA 17 SET AS THE DEFAULT JAVA VERSION
+# You can check the default java version using the following command:
+update-java-alternatives --list
+
+# If you have multiple versions of Java installed, you can set the default version using the following command:
+# This will set Java 17 as the default version. Make sure to replace the path with the correct one for your system. This is what the path should be if you installed openjdk-17-jdk
+sudo update-java-alternatives --set /usr/lib/jvm/java-1.17.0-openjdk-amd64
+
 

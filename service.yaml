@@ -1,3 +1,7 @@
+# Qasim Shahid SWE 645 Assignment 3
+# This file defines a Kubernetes service for the SurveyAPI application.
+# It exposes the application on a specific port and allows it to be accessed from outside the cluster.
+# It uses a NodePort service type, which exposes the service on each node's IP at a static port (the nodePort).
 apiVersion: v1
 kind: Service
 metadata:

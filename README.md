@@ -1,8 +1,19 @@
 # qshahid-swe645-asst3
  
-# 🔧 Database Configuration (Important!)
+# 🔧 Important: Read These Instructions! 
 
 This project requires a connection to a MySQL database. For security reasons, **you must provide your own database URL, username, and password** by creating a local `application-secret.properties` file.
+**You must also then provide the file to the Jenkins server as a Secret File with the id 'app_secret_file'. This is so we don't expose our DB url, username, and password, in this public git repository.**
+
+Please also see the createDb.sql file. Please execute that command after connecting to your AWS MySQL db using MySQL Workbench. We only need to create the database, the tables will be automatically created.
+
+You need to setup the following security group in AWS: 
+- HTTP (TCP 80) from 0.0.0.0/0
+- Custom TCP (TCP 30000–40000) from 0.0.0.0/0
+- HTTPS (TCP 443) from 0.0.0.0/0
+- SSH (TCP 22) from 0.0.0.0/0
+- MySQL/Aurora (TCP 3306) from 0.0.0.0/0
+- Custom TCP (TCP 8080) from 0.0.0.0/0
 
 ---
 
@@ -21,6 +32,8 @@ spring.datasource.url=jdbc:mysql://<your-db-host>:3306/survey_db
 spring.datasource.username=<your-username>
 spring.datasource.password=<your-password>
 ```
+
+Add this file as a secret credential to your Jenkins server with the id 'app_secret_file'.
 
 ---
 

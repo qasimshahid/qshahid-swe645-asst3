@@ -1,3 +1,7 @@
+# Qasim Shahid
+# SWE 645 Assignment 3
+# This file defines a Kubernetes deployment for the SurveyAPI application.
+# It specifies the number of replicas, the container image to use, and the ports to expose.
 apiVersion: apps/v1
 kind: Deployment
 metadata:

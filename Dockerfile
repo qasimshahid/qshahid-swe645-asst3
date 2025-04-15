@@ -1,3 +1,6 @@
+# Qasim Shahid
+# Create a Docker container for our Spring Boot application that runs an API on port 8080.
+
 FROM openjdk:17-jdk-slim
 
 # Set the working directory inside the container

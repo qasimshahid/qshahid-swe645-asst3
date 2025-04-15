@@ -1,3 +1,8 @@
+// # Qasim Shahid
+// SWE 645 - Assignment 3
+// Jenkinsfile for CI/CD pipeline
+// This Jenkinsfile automates the build, test, and deployment process for a Spring Boot application using Docker and Kubernetes.
+
 pipeline {
     agent any
     environment {
