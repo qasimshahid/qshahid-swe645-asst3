@@ -22,6 +22,7 @@ pipeline {
 
         stage('Build Maven Project') {
             steps {
+                sh 'cd surveyapi'
                 sh 'mvn clean package -DskipTests'
             }
         }
