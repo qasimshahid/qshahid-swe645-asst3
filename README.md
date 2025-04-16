@@ -76,9 +76,9 @@ Here are example JSON bodies you can use in Postman to test the API endpoints:
   "telephone": "555-123-4567",
   "email": "alice.johnson@example.com",
   "dateOfSurvey": "2025-04-10",
-  "likedMost": "faculty",
+  "likedMost": "Dorm rooms",
   "interestSource": "Television",
-  "recommendLikelihood": "Somewhat Likely",
+  "recommendLikelihood": "Likely",
   "additionalComments": "The faculty was very helpful!"
 }
 ```
