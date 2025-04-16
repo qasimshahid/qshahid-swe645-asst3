@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.*;
 @CrossOrigin(origins = "*")
 public class SurveyController {
 
-  private final String version = "2.0.0.0"; // Change when you want to show that pipeline successfully rebuilds the application.
+  private final String version = "3.0.0.0"; // Change when you want to show that pipeline successfully rebuilds the application.
   private final SurveyService surveyService;
 
   public SurveyController(SurveyService surveyService) {
