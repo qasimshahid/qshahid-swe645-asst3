@@ -11,7 +11,6 @@
 .mtj.tmp/
 
 # Package Files #
-*.jar
 *.war
 *.nar
 *.ear
@@ -32,6 +31,11 @@ replay_pid*
 /dataSources.local.xml
 /.idea
 surveyapi/src/main/resources/application-secret.properties
-/surveyapi/target
 ~WRL3317.tmp
 ~$README.docx
+surveyapi/target/classes/application-secret.properties
+surveyapi/target/classes/application.properties
+surveyapi/target/maven-archiver/pom.properties
+surveyapi/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst
+surveyapi/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst
+surveyapi/target/surveyapi-0.0.1-SNAPSHOT.jar.original
