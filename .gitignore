@@ -39,3 +39,4 @@ surveyapi/target/maven-archiver/pom.properties
 surveyapi/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst
 surveyapi/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst
 surveyapi/target/surveyapi-0.0.1-SNAPSHOT.jar.original
+/surveyapi/target
